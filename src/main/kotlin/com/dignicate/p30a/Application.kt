@@ -1,6 +1,6 @@
-package example.com
+package com.dignicate.p30a
 
-import example.com.plugins.*
+import com.dignicate.p30a.plugins.configureRouting
 import io.ktor.server.application.*
 
 fun main(args: Array<String>) {
