@@ -1,10 +1,12 @@
 
 val kotlin_version: String by project
 val logback_version: String by project
+val ktor_version: String by project
 
 plugins {
     kotlin("jvm") version "2.0.0"
     id("io.ktor.plugin") version "2.3.12"
+    kotlin("plugin.serialization") version "1.4.21"
 }
 
 group = "com.dignicate"
@@ -28,4 +30,7 @@ dependencies {
     implementation("io.ktor:ktor-server-config-yaml")
     testImplementation("io.ktor:ktor-server-test-host-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+
+    // https://ktor.io/docs/server-resources.html
+    implementation("io.ktor:ktor-server-resources:$ktor_version")
 }
