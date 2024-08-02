@@ -1,7 +1,6 @@
 package com.dignicate.p30a
 
 import com.dignicate.p30a.plugins.configureRouting
-import io.ktor.resources.Resource
 import io.ktor.server.application.*
 import io.ktor.server.resources.Resources
 
