@@ -33,4 +33,7 @@ dependencies {
 
     // https://ktor.io/docs/server-resources.html
     implementation("io.ktor:ktor-server-resources:$ktor_version")
+
+    // https://ktor.io/docs/server-serialization.html
+    implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
 }
