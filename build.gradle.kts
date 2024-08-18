@@ -36,4 +36,5 @@ dependencies {
 
     // https://ktor.io/docs/server-serialization.html
     implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
 }
