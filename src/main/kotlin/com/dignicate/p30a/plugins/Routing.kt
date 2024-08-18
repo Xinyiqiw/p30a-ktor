@@ -11,8 +11,26 @@ fun Application.configureRouting() {
         get<Root> {
             call.respondText("Hello World!")
         }
+        get<Root.Items.List> {
+            // TODO: return list of items
+            call.respondText("List of items")
+        }
+        get<Root.Items.Id> {
+            // TODO: return item by id
+            call.respondText("Item by id")
+        }
     }
 }
 
 @Resource("/")
-private class Root
+private class Root {
+    @Resource("/item")
+    class Items {
+        @Resource("/list")
+        class List(val parent: Items = Items(), val limit: Int? = 5)
+        @Resource("/{id}")
+        class Id(val parent: Items = Items(), val id: Long)
+    }
+}
+
+
