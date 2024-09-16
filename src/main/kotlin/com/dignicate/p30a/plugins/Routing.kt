@@ -15,7 +15,7 @@ fun Application.configureRouting() {
         get<Root> {
             call.respondRedirect(Url("https://dignicate.com"))
         }
-        get<Root.Automobile.Companies> { companies ->
+        get<Root.Automobile.V1.Companies> { companies ->
             // Koin から Controller を DI で取得
             val controller: AutomobileController = getKoin().get<AutomobileController> { parametersOf(call) }
 
@@ -27,16 +27,23 @@ fun Application.configureRouting() {
 
 @Resource("/")
 private class Root {
-//    @Resource("/item")
-//    class Items {
-//        @Resource("/list")
-//        class List(val parent: Items = Items(), val limit: Int? = 5)
-//        @Resource("/{id}")
-//        class Id(val parent: Items = Items(), val id: Long)
-//    }
     @Resource("/automobile")
-    class Automobile {
-        @Resource("/companies")
-        class Companies(val parent: Automobile = Automobile(), val limit: Int = 10, val page: Int = 1)
+    class Automobile(
+        @Suppress("unused")
+        val parent: Root = Root()
+    ) {
+        @Resource("/v1")
+        class V1(
+            @Suppress("unused")
+            val parent: Automobile = Automobile()
+        ) {
+            @Resource("/companies")
+            class Companies(
+                @Suppress("unused")
+                val parent: V1 = V1(),
+                val limit: Int = 10,
+                val page: Int = 1
+            )
+        }
     }
 }
