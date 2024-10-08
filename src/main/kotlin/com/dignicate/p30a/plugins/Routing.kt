@@ -16,10 +16,7 @@ fun Application.configureRouting() {
             call.respondRedirect(Url("https://dignicate.com"))
         }
         get<Root.Automobile.V1.Companies> { companies ->
-            // Koin から Controller を DI で取得
             val controller: AutomobileController = getKoin().get<AutomobileController> { parametersOf(call) }
-
-            // Controller を呼び出して処理を実行
             controller.getCompanies(companies.limit, companies.page)
         }
     }

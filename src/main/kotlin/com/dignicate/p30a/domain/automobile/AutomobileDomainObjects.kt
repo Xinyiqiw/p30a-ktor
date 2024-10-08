@@ -8,9 +8,17 @@ data class Company(
     @SerialName("id")
     val id: Int,
     @SerialName("name")
-    val name: String,
+    val name: LocalizedString,
     @SerialName("country")
-    val country: String,
+    val country: LocalizedString,
     @SerialName("founded_year")
     val foundedYear: Int
+)
+
+@Serializable
+data class LocalizedString(
+    @SerialName("en")
+    val en: String,
+    @SerialName("ja")
+    val ja: String
 )
