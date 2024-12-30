@@ -17,7 +17,7 @@ HERE=${FULLPATH}
 cd ${HERE}
 . ${HERE}/.env.sh
 cd ${PROJECT_HOME}/target
-RELEASE_HOME=${DEFIRE_HOME}/release
+RELEASE_HOME=${P30A_HOME}/release
 
 if [ "$HOST" = "localhost" ]; then
   mkdir -p ${RELEASE_HOME}
@@ -31,9 +31,9 @@ if [ $? -ne 0 ]; then
 fi
 
 if [ "$HOST" = "localhost" ]; then
-  cp -r ${BUILD_NO} ${DEFIRE_HOME}/release/.
+  cp -r ${BUILD_NO} ${P30A_HOME}/release/.
 else
-  scp -r ${BUILD_NO} ${HOST}:${DEFIRE_HOME}/release/.
+  scp -r ${BUILD_NO} ${HOST}:${P30A_HOME}/release/.
 fi
 
 if [ $? -ne 0 ]; then
@@ -52,7 +52,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 echo "..."
-echo "Deployed: ${HOST}:${DEFIRE_HOME}/release/head"
+echo "Deployed: ${HOST}:${P30A_HOME}/release/head"
 echo "=== Deploy successfully done. ==="
 exit 0
 
