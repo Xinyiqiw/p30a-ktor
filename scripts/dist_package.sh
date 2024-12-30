@@ -8,7 +8,8 @@ cd ${HERE}
 . ${HERE}/.env.sh
 
 cd ${PROJECT_HOME}
-gradle wrapper
+#gradle wrapper
+#./gradlew installDist --scan
 ./gradlew installDist
 #sbt dist
 if [ $? -ne 0 ]; then
@@ -33,4 +34,3 @@ fi
 echo ${BUILD_NO} > ${HERE}/.build_no
 cat ${HERE}/.build_no
 exit 0
-
