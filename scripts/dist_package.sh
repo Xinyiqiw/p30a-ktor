@@ -25,7 +25,8 @@ COMMIT=`git log --format="%H" -n 1`
 BUILD_NO=${DATE}${COMMIT}
 #echo $BUILD_NO
 #mkdir -p ${BUILD_NO}
-zip ${BUILD_NO}.zip com.dignicate.p30a-ktor/
+#zip ${BUILD_NO}.zip com.dignicate.p30a-ktor/
+mv -f com.dignicate.p30a-ktor ${BUILD_NO}
 #mv -f universal/${DEFIRE_NAME}-*.zip ${BUILD_NO}/.
 if [ $? -ne 0 ]; then
   echo "=== Build aborted. ==="

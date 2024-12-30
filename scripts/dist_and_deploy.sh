@@ -14,19 +14,17 @@ cd ${HERE}
 
 . ${HERE}/.env.sh
 cd ${HERE}
-./dist_package.sh
+bash ./dist_package.sh
 RETURN=$?
 if [ ${RETURN} -ne 0 ]; then
   exit ${RETURN}
 fi
 
 BUILD_NO=`cat ${HERE}/.build_no`
-./deploy.sh ${BUILD_NO} ${HOST}
+bash ./deploy.sh ${BUILD_NO} ${HOST}
 RETURN=$?
 if [ ${RETURN} -ne 0 ]; then
   exit ${RETURN}
 fi
 
 exit 0
-
-
