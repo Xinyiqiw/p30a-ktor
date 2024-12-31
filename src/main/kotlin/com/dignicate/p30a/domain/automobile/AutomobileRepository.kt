@@ -36,11 +36,13 @@ class MockAutomobileRepository : AutomobileRepository {
                 id = 3,
                 name = listOf(
                     LocalizedString(language = "en", value = "BMW"),
-                    LocalizedString(language = "ja", value = "ビー・エム・ダブリュー")
+                    LocalizedString(language = "ja", value = "ビー・エム・ダブリュー"),
+                    LocalizedString(language = "de", value = "BMW")
                 ),
                 country = listOf(
                     LocalizedString(language = "en", value = "Germany"),
-                    LocalizedString(language = "ja", value = "ドイツ")
+                    LocalizedString(language = "ja", value = "ドイツ"),
+                    LocalizedString(language = "de", value = "Deutschland")
                 ),
                 foundedYear = 1916
             ),
@@ -273,6 +275,206 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ar", value = "سوريا")
                 ),
                 foundedYear = 2007
+            ),
+            Company(
+                id = 21,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Suzuki"),
+                    LocalizedString(language = "ja", value = "スズキ")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Japan"),
+                    LocalizedString(language = "ja", value = "日本")
+                ),
+                foundedYear = 1909
+            ),
+            Company(
+                id = 22,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Mazda"),
+                    LocalizedString(language = "ja", value = "マツダ")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Japan"),
+                    LocalizedString(language = "ja", value = "日本")
+                ),
+                foundedYear = 1920
+            ),
+            Company(
+                id = 23,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Subaru"),
+                    LocalizedString(language = "ja", value = "スバル")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Japan"),
+                    LocalizedString(language = "ja", value = "日本")
+                ),
+                foundedYear = 1953
+            ),
+            Company(
+                id = 24,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Mitsubishi"),
+                    LocalizedString(language = "ja", value = "三菱")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Japan"),
+                    LocalizedString(language = "ja", value = "日本")
+                ),
+                foundedYear = 1870
+            ),
+            Company(
+                id = 25,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Isuzu"),
+                    LocalizedString(language = "ja", value = "いすゞ")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Japan"),
+                    LocalizedString(language = "ja", value = "日本")
+                ),
+                foundedYear = 1916
+            ),
+            Company(
+                id = 26,
+                name = listOf(
+                    LocalizedString(language = "en", value = "AvtoVAZ"),
+                    LocalizedString(language = "ja", value = "アフトヴァズ"),
+                    LocalizedString(language = "ru", value = "АвтоВАЗ")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Russia"),
+                    LocalizedString(language = "ja", value = "ロシア"),
+                    LocalizedString(language = "ru", value = "Россия")
+                ),
+                foundedYear = 1966
+            ),
+            Company(
+                id = 27,
+                name = listOf(
+                    LocalizedString(language = "en", value = "GAZ"),
+                    LocalizedString(language = "ja", value = "ガズ"),
+                    LocalizedString(language = "ru", value = "ГАЗ")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Russia"),
+                    LocalizedString(language = "ja", value = "ロシア"),
+                    LocalizedString(language = "ru", value = "Россия")
+                ),
+                foundedYear = 1932
+            ),
+            Company(
+                id = 28,
+                name = listOf(
+                    LocalizedString(language = "en", value = "ZAZ"),
+                    LocalizedString(language = "ja", value = "ザズ"),
+                    LocalizedString(language = "uk", value = "ЗАЗ")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Ukraine"),
+                    LocalizedString(language = "ja", value = "ウクライナ"),
+                    LocalizedString(language = "uk", value = "Україна")
+                ),
+                foundedYear = 1923
+            ),
+            Company(
+                id = 29,
+                name = listOf(
+                    LocalizedString(language = "en", value = "BelAZ"),
+                    LocalizedString(language = "ja", value = "ベラズ"),
+                    LocalizedString(language = "be", value = "БелАЗ")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Belarus"),
+                    LocalizedString(language = "ja", value = "ベラルーシ"),
+                    LocalizedString(language = "be", value = "Беларусь")
+                ),
+                foundedYear = 1948
+            ),
+            Company(
+                id = 30,
+                name = listOf(
+                    LocalizedString(language = "en", value = "UAZ"),
+                    LocalizedString(language = "ja", value = "ウアズ"),
+                    LocalizedString(language = "ru", value = "УАЗ")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Russia"),
+                    LocalizedString(language = "ja", value = "ロシア"),
+                    LocalizedString(language = "ru", value = "Россия")
+                ),
+                foundedYear = 1941
+            ),
+            Company(
+                id = 31,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Autocars Co."),
+                    LocalizedString(language = "he", value = "אוטוקרס"),
+                    LocalizedString(language = "ja", value = "オートカーズ")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Israel"),
+                    LocalizedString(language = "he", value = "ישראל"),
+                    LocalizedString(language = "ja", value = "イスラエル")
+                ),
+                foundedYear = 1957
+            ),
+            Company(
+                id = 32,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Wallyscar"),
+                    LocalizedString(language = "fr", value = "Wallyscar"),
+                    LocalizedString(language = "ja", value = "ウォリースカー")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Tunisia"),
+                    LocalizedString(language = "fr", value = "Tunisie"),
+                    LocalizedString(language = "ja", value = "チュニジア")
+                ),
+                foundedYear = 2006
+            ),
+            Company(
+                id = 33,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Innoson Vehicle Manufacturing"),
+                    LocalizedString(language = "ig", value = "Innoson Vehicle Manufacturing"),
+                    LocalizedString(language = "ja", value = "イノソン・ビークル・マニュファクチャリング")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Nigeria"),
+                    LocalizedString(language = "ig", value = "Naịjịrịa"),
+                    LocalizedString(language = "ja", value = "ナイジェリア")
+                ),
+                foundedYear = 2007
+            ),
+            Company(
+                id = 34,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Troller"),
+                    LocalizedString(language = "pt", value = "Troller"),
+                    LocalizedString(language = "ja", value = "トローラー")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Brazil"),
+                    LocalizedString(language = "pt", value = "Brasil"),
+                    LocalizedString(language = "ja", value = "ブラジル")
+                ),
+                foundedYear = 1995
+            ),
+            Company(
+                id = 35,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Zanella"),
+                    LocalizedString(language = "es", value = "Zanella"),
+                    LocalizedString(language = "ja", value = "ザネラ")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Argentina"),
+                    LocalizedString(language = "es", value = "Argentina"),
+                    LocalizedString(language = "ja", value = "アルゼンチン")
+                ),
+                foundedYear = 1948
             ),
         )
         // Simple paging
