@@ -15,12 +15,12 @@ function usage() {
 function status() {
   isProcessing=$1
   if [ -n "${PID}" ]; then
-    ENV=`ps -ef | grep -v grep | grep -o -e "conf/_[a-z0-9]*" | cut -c7- | head -1`
+    #ENV=`ps -ef | grep -v grep | grep -o -e "conf/_[a-z0-9]*" | cut -c7- | head -1`
     VER=`ps -ef | grep -v grep | grep -o "p30a-ktor-[0-9\.]*.jar" | awk -F'p30a-ktor-|.jar' '{print $2}'`
     BLD=`ps -ef | grep -v grep | grep -o "release/[0-9]*-[0-9a-z]*" | head -1 | cut -c9-`
     echo "$APPNAME is running."
     echo "  - pid: ${PID}"
-    echo "  - env: ${ENV}"
+    #echo "  - env: ${ENV}"
     echo "  - ver: ${VER}"
     echo "  - bld: ${BLD}"
     return 0
@@ -44,29 +44,6 @@ if [ $# -lt 1 ]; then
 fi
 
 CMD=$1
-#if [ "${CMD}" = "start" ] || [ "${CMD}" = "restart" ]; then
-#  if [ $# -lt 2 ]; then
-#    usage
-#  fi
-#  ENV=$2
-#  case ${ENV} in
-#    prod)
-#      COMMAND=start
-#      ;;
-#    octo)
-#      COMMAND=run
-#      ;;
-#    serpenti)
-#      COMMAND=run
-#      ;;
-#    dev)
-#      COMMAND=run
-#      ;;
-#    *)
-#      echo "[ERROR] Invalid enviroment name: $ENV"
-#      exit 1
-#  esac
-#fi
 
 # Declaration
 P30A_HOME=""
@@ -81,10 +58,10 @@ RELEASE_HEAD="${RELEASE_HOME}/head"
 PID=`getPid`
 
 ## under construction
-#if [ "${CMD}" = "restart" ]; then
-#  . $0 stop && . $0 start ${ENV}
-#  exit $?
-#fi
+if [ "${CMD}" = "restart" ]; then
+  . $0 stop && sleep 1 && . $0 start ${ENV}
+  exit $?
+fi
 if [ "${CMD}" = "start" ]; then
   if [ ! -d "${RELEASE_HEAD}" ]; then
     echo "[ERROR]"
