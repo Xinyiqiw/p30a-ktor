@@ -205,7 +205,75 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "fr", value = "France")
                 ),
                 foundedYear = 1810
-            )
+            ),
+            Company(
+                id = 16,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Mitsuoka"),
+                    LocalizedString(language = "ja", value = "光岡自動車")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Japan"),
+                    LocalizedString(language = "ja", value = "日本")
+                ),
+                foundedYear = 1968
+            ),
+            Company(
+                id = 17,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Pyeonghwa Motors"),
+                    LocalizedString(language = "ja", value = "平和自動車"),
+                    LocalizedString(language = "ko", value = "평화자동차")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "North Korea"),
+                    LocalizedString(language = "ja", value = "朝鮮民主主義人民共和国"),
+                    LocalizedString(language = "ko", value = "조선민주주의인민공화국")
+                ),
+                foundedYear = 1999
+            ),
+            Company(
+                id = 18,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Iran Khodro"),
+                    LocalizedString(language = "ja", value = "イラン・ホドロ"),
+                    LocalizedString(language = "fa", value = "ایران خودرو")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Iran"),
+                    LocalizedString(language = "ja", value = "イラン"),
+                    LocalizedString(language = "fa", value = "ایران")
+                ),
+                foundedYear = 1962
+            ),
+            Company(
+                id = 19,
+                name = listOf(
+                    LocalizedString(language = "en", value = "State Company for Automotive Industry"),
+                    LocalizedString(language = "ja", value = "国営自動車産業会社"),
+                    LocalizedString(language = "ar", value = "الشركة العامة لصناعة السيارات")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Iraq"),
+                    LocalizedString(language = "ja", value = "イラク"),
+                    LocalizedString(language = "ar", value = "العراق")
+                ),
+                foundedYear = 1976
+            ),
+            Company(
+                id = 20,
+                name = listOf(
+                    LocalizedString(language = "en", value = "Syria Motors"),
+                    LocalizedString(language = "ja", value = "シリア・モーターズ"),
+                    LocalizedString(language = "ar", value = "سوريا موتورز")
+                ),
+                country = listOf(
+                    LocalizedString(language = "en", value = "Syria"),
+                    LocalizedString(language = "ja", value = "シリア"),
+                    LocalizedString(language = "ar", value = "سوريا")
+                ),
+                foundedYear = 2007
+            ),
         )
         // Simple paging
         return allCompanies.drop((page - 1) * limit).take(limit)
