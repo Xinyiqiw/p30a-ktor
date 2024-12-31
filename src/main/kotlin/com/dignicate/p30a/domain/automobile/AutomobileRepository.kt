@@ -5,6 +5,122 @@ interface AutomobileRepository {
 }
 
 class MockAutomobileRepository : AutomobileRepository {
+
+    private object Country {
+        val japan = listOf(
+            LocalizedString(language = "en", value = "Japan"),
+            LocalizedString(language = "ja", value = "日本")
+        )
+        val germany = listOf(
+            LocalizedString(language = "en", value = "Germany"),
+            LocalizedString(language = "ja", value = "ドイツ"),
+            LocalizedString(language = "de", value = "Deutschland")
+        )
+        val usa = listOf(
+            LocalizedString(language = "en", value = "USA"),
+            LocalizedString(language = "ja", value = "アメリカ")
+        )
+        val southKorea = listOf(
+            LocalizedString(language = "en", value = "South Korea"),
+            LocalizedString(language = "ja", value = "韓国"),
+            LocalizedString(language = "ko", value = "대한민국")
+        )
+        val italy = listOf(
+            LocalizedString(language = "en", value = "Italy"),
+            LocalizedString(language = "ja", value = "イタリア"),
+            LocalizedString(language = "it", value = "Italia")
+        )
+        val sweden = listOf(
+            LocalizedString(language = "en", value = "Sweden"),
+            LocalizedString(language = "ja", value = "スウェーデン"),
+            LocalizedString(language = "sv", value = "Sverige")
+        )
+        val india = listOf(
+            LocalizedString(language = "en", value = "India"),
+            LocalizedString(language = "ja", value = "インド"),
+            LocalizedString(language = "hi", value = "भारत")
+        )
+        val france = listOf(
+            LocalizedString(language = "en", value = "France"),
+            LocalizedString(language = "ja", value = "フランス"),
+            LocalizedString(language = "fr", value = "France")
+        )
+        val croatia = listOf(
+            LocalizedString(language = "en", value = "Croatia"),
+            LocalizedString(language = "ja", value = "クロアチア"),
+            LocalizedString(language = "hr", value = "Hrvatska")
+        )
+        val serbia = listOf(
+            LocalizedString(language = "en", value = "Serbia"),
+            LocalizedString(language = "ja", value = "セルビア"),
+            LocalizedString(language = "sr", value = "Србија")
+        )
+        val australia = listOf(
+            LocalizedString(language = "en", value = "Australia"),
+            LocalizedString(language = "ja", value = "オーストラリア")
+        )
+        val northKorea = listOf(
+            LocalizedString(language = "en", value = "North Korea"),
+            LocalizedString(language = "ja", value = "朝鮮民主主義人民共和国"),
+            LocalizedString(language = "ko", value = "조선민주주의인민공화국")
+        )
+        val iran = listOf(
+            LocalizedString(language = "en", value = "Iran"),
+            LocalizedString(language = "ja", value = "イラン"),
+            LocalizedString(language = "fa", value = "ایران")
+        )
+        val iraq = listOf(
+            LocalizedString(language = "en", value = "Iraq"),
+            LocalizedString(language = "ja", value = "イラク"),
+            LocalizedString(language = "ar", value = "العراق")
+        )
+        val syria = listOf(
+            LocalizedString(language = "en", value = "Syria"),
+            LocalizedString(language = "ja", value = "シリア"),
+            LocalizedString(language = "ar", value = "سوريا")
+        )
+        val russia = listOf(
+            LocalizedString(language = "en", value = "Russia"),
+            LocalizedString(language = "ja", value = "ロシア"),
+            LocalizedString(language = "ru", value = "Россия")
+        )
+        val ukraine = listOf(
+            LocalizedString(language = "en", value = "Ukraine"),
+            LocalizedString(language = "ja", value = "ウクライナ"),
+            LocalizedString(language = "uk", value = "Україна")
+        )
+        val belarus = listOf(
+            LocalizedString(language = "en", value = "Belarus"),
+            LocalizedString(language = "ja", value = "ベラルーシ"),
+            LocalizedString(language = "be", value = "Беларусь")
+        )
+        val israel = listOf(
+            LocalizedString(language = "en", value = "Israel"),
+            LocalizedString(language = "he", value = "ישראל"),
+            LocalizedString(language = "ja", value = "イスラエル")
+        )
+        val tunisia = listOf(
+            LocalizedString(language = "en", value = "Tunisia"),
+            LocalizedString(language = "fr", value = "Tunisie"),
+            LocalizedString(language = "ja", value = "チュニジア")
+        )
+        val nigeria = listOf(
+            LocalizedString(language = "en", value = "Nigeria"),
+            LocalizedString(language = "ig", value = "Naịjịrịa"),
+            LocalizedString(language = "ja", value = "ナイジェリア")
+        )
+        val brazil = listOf(
+            LocalizedString(language = "en", value = "Brazil"),
+            LocalizedString(language = "pt", value = "Brasil"),
+            LocalizedString(language = "ja", value = "ブラジル")
+        )
+        val argentina = listOf(
+            LocalizedString(language = "en", value = "Argentina"),
+            LocalizedString(language = "es", value = "Argentina"),
+            LocalizedString(language = "ja", value = "アルゼンチン")
+        )
+    }
+
     override fun getCompanies(limit: Int, page: Int): List<Company> {
         // Mock data
         val allCompanies = listOf(
@@ -14,10 +130,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "en", value = "Toyota"),
                     LocalizedString(language = "ja", value = "トヨタ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Japan"),
-                    LocalizedString(language = "ja", value = "日本")
-                ),
+                country = Country.japan,
                 foundedYear = 1937
             ),
             Company(
@@ -26,10 +139,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "en", value = "Ford"),
                     LocalizedString(language = "ja", value = "フォード")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "USA"),
-                    LocalizedString(language = "ja", value = "アメリカ")
-                ),
+                country = Country.usa,
                 foundedYear = 1903
             ),
             Company(
@@ -39,11 +149,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "ビー・エム・ダブリュー"),
                     LocalizedString(language = "de", value = "BMW")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Germany"),
-                    LocalizedString(language = "ja", value = "ドイツ"),
-                    LocalizedString(language = "de", value = "Deutschland")
-                ),
+                country = Country.germany,
                 foundedYear = 1916
             ),
             Company(
@@ -53,11 +159,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "ヒュンダイ"),
                     LocalizedString(language = "ko", value = "현대")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "South Korea"),
-                    LocalizedString(language = "ja", value = "韓国"),
-                    LocalizedString(language = "ko", value = "대한민국")
-                ),
+                country = Country.southKorea,
                 foundedYear = 1967
             ),
             Company(
@@ -67,11 +169,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "フィアット"),
                     LocalizedString(language = "it", value = "Fiat")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Italy"),
-                    LocalizedString(language = "ja", value = "イタリア"),
-                    LocalizedString(language = "it", value = "Italia")
-                ),
+                country = Country.italy,
                 foundedYear = 1899
             ),
             Company(
@@ -81,11 +179,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "ボルボ"),
                     LocalizedString(language = "sv", value = "Volvo")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Sweden"),
-                    LocalizedString(language = "ja", value = "スウェーデン"),
-                    LocalizedString(language = "sv", value = "Sverige")
-                ),
+                country = Country.sweden,
                 foundedYear = 1927
             ),
             Company(
@@ -95,11 +189,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "タタ・モーターズ"),
                     LocalizedString(language = "hi", value = "टाटा मोटर्स")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "India"),
-                    LocalizedString(language = "ja", value = "インド"),
-                    LocalizedString(language = "hi", value = "भारत")
-                ),
+                country = Country.india,
                 foundedYear = 1945
             ),
             Company(
@@ -109,11 +199,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "ルノー"),
                     LocalizedString(language = "fr", value = "Renault")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "France"),
-                    LocalizedString(language = "ja", value = "フランス"),
-                    LocalizedString(language = "fr", value = "France")
-                ),
+                country = Country.france,
                 foundedYear = 1899
             ),
             Company(
@@ -122,10 +208,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "en", value = "Koenigsegg"),
                     LocalizedString(language = "ja", value = "ケーニグセグ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Sweden"),
-                    LocalizedString(language = "ja", value = "スウェーデン")
-                ),
+                country = Country.sweden,
                 foundedYear = 1994
             ),
             Company(
@@ -135,11 +218,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "パガーニ"),
                     LocalizedString(language = "it", value = "Pagani")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Italy"),
-                    LocalizedString(language = "ja", value = "イタリア"),
-                    LocalizedString(language = "it", value = "Italia")
-                ),
+                country = Country.italy,
                 foundedYear = 1992
             ),
             Company(
@@ -149,11 +228,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "リマック"),
                     LocalizedString(language = "hr", value = "Rimac")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Croatia"),
-                    LocalizedString(language = "ja", value = "クロアチア"),
-                    LocalizedString(language = "hr", value = "Hrvatska")
-                ),
+                country = Country.croatia,
                 foundedYear = 2009
             ),
             Company(
@@ -163,11 +238,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "ザスタバ"),
                     LocalizedString(language = "sr", value = "Застава")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Serbia"),
-                    LocalizedString(language = "ja", value = "セルビア"),
-                    LocalizedString(language = "sr", value = "Србија")
-                ),
+                country = Country.serbia,
                 foundedYear = 1953
             ),
             Company(
@@ -176,10 +247,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "en", value = "Holden"),
                     LocalizedString(language = "ja", value = "ホールデン")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Australia"),
-                    LocalizedString(language = "ja", value = "オーストラリア")
-                ),
+                country = Country.australia,
                 foundedYear = 1856
             ),
             Company(
@@ -188,10 +256,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "en", value = "Saab"),
                     LocalizedString(language = "ja", value = "サーブ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Sweden"),
-                    LocalizedString(language = "ja", value = "スウェーデン")
-                ),
+                country = Country.sweden,
                 foundedYear = 1945
             ),
             Company(
@@ -201,11 +266,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "プジョー"),
                     LocalizedString(language = "fr", value = "Peugeot")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "France"),
-                    LocalizedString(language = "ja", value = "フランス"),
-                    LocalizedString(language = "fr", value = "France")
-                ),
+                country = Country.france,
                 foundedYear = 1810
             ),
             Company(
@@ -214,10 +275,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "en", value = "Mitsuoka"),
                     LocalizedString(language = "ja", value = "光岡自動車")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Japan"),
-                    LocalizedString(language = "ja", value = "日本")
-                ),
+                country = Country.japan,
                 foundedYear = 1968
             ),
             Company(
@@ -227,11 +285,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "平和自動車"),
                     LocalizedString(language = "ko", value = "평화자동차")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "North Korea"),
-                    LocalizedString(language = "ja", value = "朝鮮民主主義人民共和国"),
-                    LocalizedString(language = "ko", value = "조선민주주의인민공화국")
-                ),
+                country = Country.northKorea,
                 foundedYear = 1999
             ),
             Company(
@@ -241,11 +295,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "イラン・ホドロ"),
                     LocalizedString(language = "fa", value = "ایران خودرو")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Iran"),
-                    LocalizedString(language = "ja", value = "イラン"),
-                    LocalizedString(language = "fa", value = "ایران")
-                ),
+                country = Country.iran,
                 foundedYear = 1962
             ),
             Company(
@@ -255,11 +305,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "国営自動車産業会社"),
                     LocalizedString(language = "ar", value = "الشركة العامة لصناعة السيارات")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Iraq"),
-                    LocalizedString(language = "ja", value = "イラク"),
-                    LocalizedString(language = "ar", value = "العراق")
-                ),
+                country = Country.iraq,
                 foundedYear = 1976
             ),
             Company(
@@ -269,11 +315,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "シリア・モーターズ"),
                     LocalizedString(language = "ar", value = "سوريا موتورز")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Syria"),
-                    LocalizedString(language = "ja", value = "シリア"),
-                    LocalizedString(language = "ar", value = "سوريا")
-                ),
+                country = Country.syria,
                 foundedYear = 2007
             ),
             Company(
@@ -282,10 +324,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "en", value = "Suzuki"),
                     LocalizedString(language = "ja", value = "スズキ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Japan"),
-                    LocalizedString(language = "ja", value = "日本")
-                ),
+                country = Country.japan,
                 foundedYear = 1909
             ),
             Company(
@@ -294,10 +333,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "en", value = "Mazda"),
                     LocalizedString(language = "ja", value = "マツダ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Japan"),
-                    LocalizedString(language = "ja", value = "日本")
-                ),
+                country = Country.japan,
                 foundedYear = 1920
             ),
             Company(
@@ -306,10 +342,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "en", value = "Subaru"),
                     LocalizedString(language = "ja", value = "スバル")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Japan"),
-                    LocalizedString(language = "ja", value = "日本")
-                ),
+                country = Country.japan,
                 foundedYear = 1953
             ),
             Company(
@@ -318,10 +351,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "en", value = "Mitsubishi"),
                     LocalizedString(language = "ja", value = "三菱")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Japan"),
-                    LocalizedString(language = "ja", value = "日本")
-                ),
+                country = Country.japan,
                 foundedYear = 1870
             ),
             Company(
@@ -330,10 +360,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "en", value = "Isuzu"),
                     LocalizedString(language = "ja", value = "いすゞ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Japan"),
-                    LocalizedString(language = "ja", value = "日本")
-                ),
+                country = Country.japan,
                 foundedYear = 1916
             ),
             Company(
@@ -343,11 +370,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "アフトヴァズ"),
                     LocalizedString(language = "ru", value = "АвтоВАЗ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Russia"),
-                    LocalizedString(language = "ja", value = "ロシア"),
-                    LocalizedString(language = "ru", value = "Россия")
-                ),
+                country = Country.russia,
                 foundedYear = 1966
             ),
             Company(
@@ -357,11 +380,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "ガズ"),
                     LocalizedString(language = "ru", value = "ГАЗ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Russia"),
-                    LocalizedString(language = "ja", value = "ロシア"),
-                    LocalizedString(language = "ru", value = "Россия")
-                ),
+                country = Country.russia,
                 foundedYear = 1932
             ),
             Company(
@@ -371,11 +390,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "ザズ"),
                     LocalizedString(language = "uk", value = "ЗАЗ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Ukraine"),
-                    LocalizedString(language = "ja", value = "ウクライナ"),
-                    LocalizedString(language = "uk", value = "Україна")
-                ),
+                country = Country.ukraine,
                 foundedYear = 1923
             ),
             Company(
@@ -385,11 +400,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "ベラズ"),
                     LocalizedString(language = "be", value = "БелАЗ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Belarus"),
-                    LocalizedString(language = "ja", value = "ベラルーシ"),
-                    LocalizedString(language = "be", value = "Беларусь")
-                ),
+                country = Country.belarus,
                 foundedYear = 1948
             ),
             Company(
@@ -399,11 +410,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ja", value = "ウアズ"),
                     LocalizedString(language = "ru", value = "УАЗ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Russia"),
-                    LocalizedString(language = "ja", value = "ロシア"),
-                    LocalizedString(language = "ru", value = "Россия")
-                ),
+                country = Country.russia,
                 foundedYear = 1941
             ),
             Company(
@@ -413,11 +420,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "he", value = "אוטוקרס"),
                     LocalizedString(language = "ja", value = "オートカーズ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Israel"),
-                    LocalizedString(language = "he", value = "ישראל"),
-                    LocalizedString(language = "ja", value = "イスラエル")
-                ),
+                country = Country.israel,
                 foundedYear = 1957
             ),
             Company(
@@ -427,11 +430,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "fr", value = "Wallyscar"),
                     LocalizedString(language = "ja", value = "ウォリースカー")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Tunisia"),
-                    LocalizedString(language = "fr", value = "Tunisie"),
-                    LocalizedString(language = "ja", value = "チュニジア")
-                ),
+                country = Country.tunisia,
                 foundedYear = 2006
             ),
             Company(
@@ -441,11 +440,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "ig", value = "Innoson Vehicle Manufacturing"),
                     LocalizedString(language = "ja", value = "イノソン・ビークル・マニュファクチャリング")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Nigeria"),
-                    LocalizedString(language = "ig", value = "Naịjịrịa"),
-                    LocalizedString(language = "ja", value = "ナイジェリア")
-                ),
+                country = Country.nigeria,
                 foundedYear = 2007
             ),
             Company(
@@ -455,11 +450,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "pt", value = "Troller"),
                     LocalizedString(language = "ja", value = "トローラー")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Brazil"),
-                    LocalizedString(language = "pt", value = "Brasil"),
-                    LocalizedString(language = "ja", value = "ブラジル")
-                ),
+                country = Country.brazil,
                 foundedYear = 1995
             ),
             Company(
@@ -469,11 +460,7 @@ class MockAutomobileRepository : AutomobileRepository {
                     LocalizedString(language = "es", value = "Zanella"),
                     LocalizedString(language = "ja", value = "ザネラ")
                 ),
-                country = listOf(
-                    LocalizedString(language = "en", value = "Argentina"),
-                    LocalizedString(language = "es", value = "Argentina"),
-                    LocalizedString(language = "ja", value = "アルゼンチン")
-                ),
+                country = Country.argentina,
                 foundedYear = 1948
             ),
         )
