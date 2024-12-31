@@ -121,8 +121,7 @@ class MockAutomobileRepository : AutomobileRepository {
         )
     }
 
-    override fun getCompanies(limit: Int, page: Int): List<Company> {
-        // Mock data
+    private object CompanyData {
         val allCompanies = listOf(
             Company(
                 id = 1,
@@ -464,7 +463,10 @@ class MockAutomobileRepository : AutomobileRepository {
                 foundedYear = 1948
             ),
         )
+    }
+
+    override fun getCompanies(limit: Int, page: Int): List<Company> {
         // Simple paging
-        return allCompanies.drop((page - 1) * limit).take(limit)
+        return CompanyData.allCompanies.drop((page - 1) * limit).take(limit)
     }
 }
