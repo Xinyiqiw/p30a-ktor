@@ -4,6 +4,7 @@ info:
   description: Implemented with Ktor.
   version: 1.0.0
 servers:
+#  - url: 'http://localhost:8080'
   - url: 'https://freeapi.dignicate.com'
 paths:
   /automobile/v1/companies:

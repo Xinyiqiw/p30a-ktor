@@ -43,4 +43,5 @@ dependencies {
 
     // Swagger UI
     implementation("io.ktor:ktor-server-swagger:$ktor_version")
+    implementation("io.ktor:ktor-server-cors:$ktor_version")
 }
