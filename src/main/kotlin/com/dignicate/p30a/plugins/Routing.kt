@@ -4,6 +4,7 @@ import com.dignicate.p30a.controller.AutomobileController
 import io.ktor.http.*
 import io.ktor.resources.Resource
 import io.ktor.server.application.*
+import io.ktor.server.plugins.swagger.*
 import io.ktor.server.resources.get
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
@@ -13,12 +14,14 @@ import org.koin.java.KoinJavaComponent.getKoin
 fun Application.configureRouting() {
     routing {
         get<Root> {
-            call.respondRedirect(Url("https://dignicate.com"))
+//            call.respondRedirect(Url("https://dignicate.com"))
+            call.respondRedirect(Url("/swagger"))
         }
         get<Root.Automobile.V1.Companies> { companies ->
             val controller: AutomobileController = getKoin().get<AutomobileController> { parametersOf(call) }
             controller.getCompanies(companies.limit, companies.page)
         }
+        swaggerUI(path = "swagger", swaggerFile = "openapi/documentation.yaml")
     }
 }
 

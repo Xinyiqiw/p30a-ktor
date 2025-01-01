@@ -40,4 +40,7 @@ dependencies {
 
     // koin
     implementation("io.insert-koin:koin-ktor:3.3.0")
+
+    // Swagger UI
+    implementation("io.ktor:ktor-server-swagger:$ktor_version")
 }
