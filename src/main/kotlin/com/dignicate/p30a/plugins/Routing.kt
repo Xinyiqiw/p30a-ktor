@@ -14,8 +14,7 @@ import org.koin.java.KoinJavaComponent.getKoin
 fun Application.configureRouting() {
     routing {
         get<Root> {
-//            call.respondRedirect(Url("https://dignicate.com"))
-            call.respondRedirect(Url("/swagger"))
+            call.respondRedirect(Url("https://freeapi.dignicate.com/swagger"))
         }
         get<Root.Automobile.V1.Companies> { companies ->
             val controller: AutomobileController = getKoin().get<AutomobileController> { parametersOf(call) }
