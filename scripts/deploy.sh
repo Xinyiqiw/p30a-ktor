@@ -18,12 +18,14 @@ cd ${HERE}
 . ${HERE}/.env.sh
 cd ${PROJECT_HOME}/build/install
 RELEASE_HOME=${P30A_HOME}/release
+echo "HOST: ${HOST}"
 
 if [ "$HOST" = "localhost" ]; then
   mkdir -p ${RELEASE_HOME}
 else
-  echo "ssh ${HOST} \"mkdir -p ${RELEASE_HOME}\""
-  ssh ${HOST} "mkdir -p ${RELEASE_HOME}"
+  echo "ssh -l p30a ${HOST} \"mkdir -p ${RELEASE_HOME}\""
+  ssh -l p30a ${HOST} "mkdir -p ${RELEASE_HOME}"
+  sleep 1
 fi
 
 if [ $? -ne 0 ]; then
@@ -34,8 +36,12 @@ fi
 if [ "$HOST" = "localhost" ]; then
   cp -r ${BUILD_NO} ${P30A_HOME}/release/.
 else
-  echo "scp -r ${BUILD_NO} ${HOST}:${P30A_HOME}/release/."
-  scp -r ${BUILD_NO} ${HOST}:${P30A_HOME}/release/.
+  echo "scp -r ${BUILD_NO} p30a@${HOST}:${P30A_HOME}/release/."
+  scp -r ${BUILD_NO} p30a@${HOST}:${P30A_HOME}/release/.
+  sleep 1
+  echo "scp -r ${PROJECT_HOME}/openapi p30a@${HOST}:${P30A_HOME}/release/${BUILD_NO}/bin/."
+  scp -r ${PROJECT_HOME}/openapi p30a@${HOST}:${P30A_HOME}/release/${BUILD_NO}/bin/.
+  sleep 1
 fi
 
 if [ $? -ne 0 ]; then
@@ -46,8 +52,12 @@ fi
 if [ "$HOST" = "localhost" ]; then
   cd ${RELEASE_HOME}; rm -f head; ln -s ${BUILD_NO} head
 else
-  echo "ssh ${HOST} \"cd ${RELEASE_HOME}; rm -f head; ln -s ${BUILD_NO} head\""
-  ssh ${HOST} "cd ${RELEASE_HOME}; rm -f head; ln -s ${BUILD_NO} head"
+  echo "ssh ${HOST} \"rm -f ${RELEASE_HOME}/head\""
+  ssh ${HOST} "rm -f ${RELEASE_HOME}/head"
+  sleep 1
+  echo "ssh ${HOST} \"ln -s ${RELEASE_HOME}/${BUILD_NO} ${RELEASE_HOME}/head\""
+  ssh ${HOST} "ln -s ${RELEASE_HOME}/${BUILD_NO} ${RELEASE_HOME}/head"
+  sleep 1
 fi
 
 if [ $? -ne 0 ]; then
