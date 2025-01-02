@@ -23,9 +23,9 @@ echo "HOST: ${HOST}"
 if [ "$HOST" = "localhost" ]; then
   mkdir -p ${RELEASE_HOME}
 else
-  echo "ssh ${HOST} \"mkdir -p ${RELEASE_HOME}\""
-  ssh ${HOST} "mkdir -p ${RELEASE_HOME}"
-  sleep 2
+  echo "ssh -l p30a ${HOST} \"mkdir -p ${RELEASE_HOME}\""
+  ssh -l p30a ${HOST} "mkdir -p ${RELEASE_HOME}"
+  sleep 1
 fi
 
 if [ $? -ne 0 ]; then
@@ -36,9 +36,12 @@ fi
 if [ "$HOST" = "localhost" ]; then
   cp -r ${BUILD_NO} ${P30A_HOME}/release/.
 else
-  echo "scp -r ${BUILD_NO} ${HOST}:${P30A_HOME}/release/."
-  scp -r ${BUILD_NO} ${HOST}:${P30A_HOME}/release/.
-  sleep 2
+  echo "scp -r ${BUILD_NO} p30a@${HOST}:${P30A_HOME}/release/."
+  scp -r ${BUILD_NO} p30a@${HOST}:${P30A_HOME}/release/.
+  sleep 1
+  echo "scp -r ${PROJECT_HOME}/openapi p30a@${HOST}:${P30A_HOME}/release/${BUILD_NO}/bin/."
+  scp -r ${PROJECT_HOME}/openapi p30a@${HOST}:${P30A_HOME}/release/${BUILD_NO}/bin/.
+  sleep 1
 fi
 
 if [ $? -ne 0 ]; then
@@ -51,9 +54,10 @@ if [ "$HOST" = "localhost" ]; then
 else
   echo "ssh ${HOST} \"rm -f ${RELEASE_HOME}/head\""
   ssh ${HOST} "rm -f ${RELEASE_HOME}/head"
+  sleep 1
   echo "ssh ${HOST} \"ln -s ${RELEASE_HOME}/${BUILD_NO} ${RELEASE_HOME}/head\""
   ssh ${HOST} "ln -s ${RELEASE_HOME}/${BUILD_NO} ${RELEASE_HOME}/head"
-  sleep 2
+  sleep 1
 fi
 
 if [ $? -ne 0 ]; then
